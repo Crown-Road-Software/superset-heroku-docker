@@ -34,10 +34,14 @@ OAUTH_PROVIDERS = [
             "client_id": os.environ['GOOGLE_CLIENT_ID'],
             "client_secret": os.environ['GOOGLE_CLIENT_SECRET'],
             "api_base_url": "https://www.googleapis.com/oauth2/v2/",
-            "client_kwargs": {"scope": "openid email profile"},
+            "client_kwargs": {
+                "scope": "openid email profile",
+                "token_endpoint_auth_method": "client_secret_basic"
+            },
             "request_token_url": None,
-            "access_token_url": "https://accounts.google.com/o/oauth2/token",
+            "access_token_url": "https://oauth2.googleapis.com/token",
             "authorize_url": "https://accounts.google.com/o/oauth2/auth",
+            "jwks_uri": "https://www.googleapis.com/oauth2/v3/certs",
             "authorize_params": {"hd": "crownroadsoftware.com"}
         },
     }
