@@ -1,5 +1,7 @@
 import os
 from flask_appbuilder.security.manager import AUTH_OAUTH
+from custom_security_manager import CustomSecurityManager
+
 #---------------------------------------------------------
 # Superset specific config
 #---------------------------------------------------------
@@ -21,6 +23,8 @@ SECRET_KEY = os.environ['SECRET_KEY']
 # Note that the connection information to connect to the datasources
 # you want to explore are managed directly in the web UI
 SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
+
+CUSTOM_SECURITY_MANAGER = CustomSecurityManager
 
 AUTH_TYPE = AUTH_OAUTH
 AUTH_USER_REGISTRATION = True
