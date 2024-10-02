@@ -34,7 +34,7 @@ OAUTH_PROVIDERS = [
             "client_id": os.environ['GOOGLE_CLIENT_ID'],
             "client_secret": os.environ['GOOGLE_CLIENT_SECRET'],
             "api_base_url": "https://www.googleapis.com/oauth2/v2/",
-            "client_kwargs": {"scope": "email profile"},
+            "client_kwargs": {"scope": "openid email profile"},
             "request_token_url": None,
             "access_token_url": "https://accounts.google.com/o/oauth2/token",
             "authorize_url": "https://accounts.google.com/o/oauth2/auth",
@@ -42,6 +42,16 @@ OAUTH_PROVIDERS = [
         },
     }
 ]
+
+OAUTH_USER_INFO = {
+    "google": (
+        "GET",
+        "https://www.googleapis.com/oauth2/v2/userinfo",
+        {
+            "email": lambda x: x.get("email"),
+        },
+    )
+}
 
 # Flask-WTF flag for CSRF
 WTF_CSRF_ENABLED = CSRF_ENABLED = True
