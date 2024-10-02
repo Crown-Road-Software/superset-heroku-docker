@@ -21,6 +21,8 @@ SECRET_KEY = os.environ['SECRET_KEY']
 # you want to explore are managed directly in the web UI
 SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
 
+AUTH_TYPE = AUTH_OAUTH
+
 # Flask-WTF flag for CSRF
 WTF_CSRF_ENABLED = CSRF_ENABLED = True
 
