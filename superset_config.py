@@ -1,6 +1,6 @@
 import os
 from flask_appbuilder.security.manager import AUTH_OAUTH
-from custom_security_manager import CustomSecurityManager
+from .custom_security_manager import CustomSecurityManager
 
 #---------------------------------------------------------
 # Superset specific config
